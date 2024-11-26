@@ -1,0 +1,48 @@
+{{ block title }}
+{{ endblock }}
+
+{{ block content }}
+
+<style>
+.otree-body {
+      max-width: 1920px;
+      height: 1080px;
+}
+.tab { margin-left: 175px;
+       margin-right: 175px;
+       font-size: 24px}
+
+*{ Color : #ffffff;
+  Background : #000;}
+
+::-webkit-scrollbar {
+      display: none;
+}
+</style>
+
+<h1 align = "center"> Instructions </h1>
+
+<br><br>
+<p class ="tab">
+In this study, you and your partner will be seated next to each other and complete a simple decision-making task over two sessions. The following are instructions for the first session. <br><br>
+
+In each round of this session, you will be shown two colored squares. <b> Please select one of the squares by clicking on it.</b> Depending on your and your partner’s choice, you will either both be rewarded with 10 points, or neither of you will be rewarded. The results of each round will appear only after both of you have made your choice. If you are being rewarded, you will see a results screen with your score for the current round as well as your total score. If you are not being rewarded, the screen will briefly flash red before the results page. You must click “Next” from the results page to proceed to the next round. The colored squares for the next round will only appear after both of you have clicked "Next" after viewing the previous round's results. <br><br>
+
+
+
+Your aim is to <b> maximize your reward</b>. You <b> may not communicate with your partner during the session in any way</b>. <br><br>
+
+The session consists of a total of <b> 294 rounds </b>. You will have two breaks, one after 98 rounds and another after 194 rounds. During these breaks, you may rest your eyes or stretch but may not communicate with your partner. Once both of you click “Next” after your break, the session will continue. <br><br>
+
+
+The session will be followed by a brief (one-question) <b> questionnaire </b> asking you about your experience during the session. After this, you will be given a 5-minute break before the next session. You <b> may not communicate with your partner even during this break </b>. Instructions for the next session will be presented after the break. <br><br>
+
+If you have any questions about the instructions please feel free to ask the experimenter for clarifications before starting the session.<br><br>
+
+Click <b> 'Next' </b> to begin.
+</p>
+
+<div align = "center">
+{{next_button}}
+</div>
+{{ endblock }}
