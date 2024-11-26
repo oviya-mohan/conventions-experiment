@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+  *{ Color : #ffffff;
+Background : #000;}
+
+#div1, #div2, #div3, #div4, #div5, #div6, #div7 {
+  float: left;
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid white;
+}
+#div8 {
+  float: left;
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  clear: both; 
+  border-color: white;
+} 
+#div9, #div10, #div11, #div12, #div13, #div14 {
+  float: left;
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  border-color: white;
+}
+
+#div15{
+  float: left;
+  clear: both; 
+  padding-left: 30px;
+} 
+
+#div16 {
+  float: right; 
+  padding-right: 90px;
+} 
+
+
+
+html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+    vertical-align: middle;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+    margin : auto;
+} 
+
+.center {margin:0 auto;}
+.content {
+  max-width: 1400px;
+  margin: auto;
+}
+
+</style>
+
+<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+
+document.addEventListener("mouseup", () => {
+  localStorage.setItem("top", drag.style.top);
+  localStorage.setItem("left", drag.style.top);
+});
+let coordinates = localStorage["top"] + "," + localStorage["left"];
+if (localStorage["top"] && localStorage["left"]) {
+  drag.style.top = coordinates.split(",")[0];
+  drag.style.left = coordinates.split(",")[1];
+}
+
+</script>
+</head>
+
+
+<body>
+
+  <div class = "content">
+<h2 style="font-family: Arial;"><center>During the previous visit, you and your partner successfully completed the task by settling on an <u>arbitrary</u> ranking of these seven colors. As best as you can recall, recreate this ranking (where higher rank corresponds to higher likelihood of choosing that color when it is presented with another) by dragging each color and dropping it into one of the empty squares below. 
+</center></h2>
+
+<h4 style="font-family: Arial;"><center> Do not place more than one color in one box. Use empty boxes to swap colors. If a colored square disappears, refresh the page (Windows key + R) to start over.
+</center></h4>
+
+<h3 style="font-family: Arial;"><center>Let the experimenter know when you are done.
+</center></h3>
+
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <img src="1.png" draggable="true" ondragstart="drag(event)" id="drag1" width="150" height="150">
+</div>
+
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <img src="2.png" draggable="true" ondragstart="drag(event)" id="drag2" width="150" height="150">
+</div>
+
+<div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <img src="4.png" draggable="true" ondragstart="drag(event)" id="drag3" width="150" height="150">
+</div>
+
+<div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <img src="6.png" draggable="true" ondragstart="drag(event)" id="drag4" width="150" height="150">
+</div>
+
+<div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <img src="5.png" draggable="true" ondragstart="drag(event)" id="drag5" width="150" height="150">
+</div>
+
+<div id="div6" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <img src="3.png" draggable="true" ondragstart="drag(event)" id="drag6" width="150" height="150">
+</div>
+
+<div id="div7" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <img src="7.png" draggable="true" ondragstart="drag(event)" id="drag7" width="150" height="150">
+</div>
+
+
+<div id="div8" ondrop="drop(event)" ondragover="allowDrop(event)"> </div>
+<div id="div9" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="div10" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="div11" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="div12" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="div13" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="div14" ondrop="drop(event)" ondragover="allowDrop(event)"> </div>
+<div id ="div15"><h3 style="font-family: Arial;"> Highest rank </h3></div>
+<div id ="div16"><h3 style="font-family: Arial;"> Lowest rank </h3></div>
+</div>
+
+
+</body>
+</html>
